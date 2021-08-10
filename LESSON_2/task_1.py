@@ -24,9 +24,9 @@ def transform(text):
     val = []
     for i in text:
         if i == '':
-            min.append(None)
-            max.append(None)
-            val.append(None)
+            min.append(0)
+            max.append(0)
+            val.append(0)
         if i[0:1].isdigit():
             i = i.replace('\u202f', '')
             res = i.split(' ')
@@ -36,13 +36,13 @@ def transform(text):
         if i[0:2] == 'до':
             i = i.replace('\u202f', '')
             res = i.split(' ')
-            min.append(None)
+            min.append(0)
             max.append(int(res[1]))
             val.append(res[2])
         if i[0:2] == 'от':
             i = i.replace('\u202f', '')
             res = i.split(' ')
-            max.append(None)
+            max.append(0)
             min.append(int(res[1]))
             val.append(res[2])
 
