@@ -8,5 +8,5 @@ db = client['hh_ru']
 hh_python = db.hh_python
 
 val = int(input('введите значение зарплаты'))
-for item in hh_python.find({"salary_max": {'$gt': val}}):
+for item in hh_python.find({'$or': [{"salary_max": {'$gt': val}}, {"salary_min": {'$gt': val}}]}):
     print(item)
